@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   event_manager.c                                    :+:      :+:    :+:   */
+/*   exit_lose.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 15:06:36 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/03 15:09:36 by adlecler         ###   ########.fr       */
+/*   Created: 2021/10/04 12:21:58 by mqueguin          #+#    #+#             */
+/*   Updated: 2022/06/03 15:09:44 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	events_key_manager(int keycode, t_game *game)
+void	exit_lose(t_game *game)
 {
-	first_mov(game);
-	if (keycode == 65307)
-		echap_game_mouse(game);
-	if (keycode == 119)
-		ft_up(game);
-	if (keycode == 115)
-		ft_down(game);
-	if (keycode == 97)
-		ft_left(game);
-	if (keycode == 100)
-		ft_right(game);
-	return (0);
-}
-
-int	echap_game_mouse(t_game *game)
-{
-	printf("You quit the game !\n");
-	mlx_destroy_window(game->mlx, game->mlx_win);
+	printf("You lost !\n");
 	mlx_destroy_image(game->mlx, game->img);
+	mlx_destroy_window(game->mlx, game->mlx_win);
 	free_tab2d(game->map);
 	exit(0);
 }
