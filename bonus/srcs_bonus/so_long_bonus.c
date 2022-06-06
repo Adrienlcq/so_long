@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:41:39 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/06 12:24:43 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/06/06 15:00:20 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ int	main(int ac, char **av)
 	game.count = 0;
 	if (ac != 2)
 	{
-		write(2, "Error\n", 6);
+		write(2, "Error\nWrong number of arguments\n", 32);
 		return (1);
 	}
 	if (ft_check_ber(av[1]) == -1 || ft_check_file(av[1]) == -1)
 	{
-		write(2, "Error\n", 6);
+		write(2, "Error\nWrong map extension or non-existent file\n", 48);
 		return (1);
 	}
 	ft_init_struct(&game);

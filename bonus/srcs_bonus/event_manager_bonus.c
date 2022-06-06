@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 15:06:36 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/06 12:20:05 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/06/06 14:53:59 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	events_key_manager(int keycode, t_game *game)
 
 int	echap_game_mouse(t_game *game)
 {
-	printf("You quit the game !\n");
+	write(1, "You quit the game !\n", 20);
 	mlx_destroy_window(game->mlx, game->mlx_win);
 	mlx_destroy_image(game->mlx, game->img);
 	free_tab2d(game->map);

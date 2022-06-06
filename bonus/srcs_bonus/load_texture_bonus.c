@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:55:58 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/03 15:22:22 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/06/06 14:56:16 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	load_texture(t_game *game)
 				textures[i], &game->text_x[i], &game->text_y[i]);
 		if (game->texts_img[i] == NULL)
 		{
-			printf("Error during textures load\n");
+			write(1, "Error\n during textures load\n", 28);
 			free_tab2d(game->map);
 			free_tab2d(textures);
 			free(str);
@@ -60,7 +60,7 @@ int	load_textures_numbers(t_game *game)
 			free_tab2d(game->map);
 			free_tab2d(path);
 			free(str);
-			printf("Error\nUnable to load numbers textures\n");
+			write(1, "Error\nUnable to load numbers textures\n", 38);
 			return (-1);
 		}
 	}

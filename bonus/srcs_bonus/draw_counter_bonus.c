@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:50:36 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/03 15:17:55 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/06/06 14:53:26 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	draw_count(t_game *game)
 
 	if (game->count_mov > 999)
 	{
-		printf("You are bad\n");
+		write(1, "You are bad\n", 12);
 		exit_lose(game);
 	}
 	count = game->count_mov;

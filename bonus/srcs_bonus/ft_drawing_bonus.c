@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 15:47:21 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/06 10:56:22 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/06/06 14:32:47 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,7 @@ void	ft_drawing2(t_game *game, int x, int y)
 		mlx_put_image_to_window(game->mlx, game->mlx_win,
 			game->texts_img[3], x * 32, y * 32);
 	else if (game->map[y][x] == 'C')
-	{
 		ft_animation(game, x, y);
-	}
 }
 
 int	ft_drawing(t_game *game)

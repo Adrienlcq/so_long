@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:20:22 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/06 12:16:13 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/06/06 14:59:21 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	check_invalid_char(t_game *game)
 						game->map[game->y][game->x] != 'P' &&
 							game->map[game->y][game->x] != 'D')
 	{
-		printf("Error, invalid character in map\n");
+		write(1, "Error, invalid character in map\n", 32);
 		return (-1);
 	}
 	return (0);
@@ -71,22 +71,22 @@ int	ft_check_char_map(t_game *game)
 	beginning_check_char_map(game);
 	if (game->p != 1)
 	{
-		printf("Error\nMissing player or there is more than one player\n");
+		write(1, "Error\nMissing player or there is more than one player\n", 54);
 		return (-1);
 	}
 	if (game->e != 1)
 	{
-		printf("Error\nMissing exit or there is more than one exit\n");
+		write(1, "Error\nMissing exit or there is more than one exit\n", 50);
 		return (-1);
 	}
 	if (game->c < 1)
 	{
-		printf("Error\nMissing collectible\n");
+		write(1, "Error\nMissing collectible\n", 26);
 		return (-1);
 	}
 	if (game->d > 1)
 	{
-		printf("Error\nThere is more than one Dofi\n");
+		write(1, "Error\nThere is more than one Dofi\n", 34);
 		return (-1);
 	}
 	return (0);
