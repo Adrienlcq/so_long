@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:56:45 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/06 14:57:35 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/06/24 09:46:49 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,16 @@ void	first_mov(t_game *game)
 void	ft_up(t_game *game)
 {
 	if (game->map[game->player[0] - 1][game->player[1]] == '1')
-		return ;
-	else if (game->map[game->player[0] - 1][game->player[1]] == 'C')
 	{
-		game->count_c++;
-		game->count_mov++;
-		game->map[game->player[0] - 1][game->player[1]] = '0';
-		game->player[0]--;
+		if (game->dofi[0] - 1 == game->player[0]
+			&& game->player[1] == game->dofi[1])
+		{
+			game->player[0]--;
+			write(1, "You were caught by Dofi\n", 24);
+			exit_lose(game);
+		}
+		else
+			return ;
 	}
 	else if (game->player[0] - 1 == game->dofi[0]
 		&& game->player[1] == game->dofi[1])
@@ -36,6 +39,13 @@ void	ft_up(t_game *game)
 		game->player[0]--;
 		write(1, "You were caught by Dofi\n", 24);
 		exit_lose(game);
+	}
+	else if (game->map[game->player[0] - 1][game->player[1]] == 'C')
+	{
+		game->count_c++;
+		game->count_mov++;
+		game->map[game->player[0] - 1][game->player[1]] = '0';
+		game->player[0]--;
 	}
 	else if (game->map[game->player[0] - 1][game->player[1]] == '0')
 	{	
@@ -49,13 +59,16 @@ void	ft_up(t_game *game)
 void	ft_down(t_game *game)
 {
 	if (game->map[game->player[0] + 1][game->player[1]] == '1')
-		return ;
-	else if (game->map[game->player[0] + 1][game->player[1]] == 'C')
 	{
-		game->count_c++;
-		game->count_mov++;
-		game->map[game->player[0] + 1][game->player[1]] = '0';
-		game->player[0]++;
+		if (game->dofi[0] + 1 == game->player[0]
+			&& game->player[1] == game->dofi[1])
+		{
+			game->player[0]++;
+			write(1, "You were caught by Dofi\n", 24);
+			exit_lose(game);
+		}
+		else
+			return ;
 	}
 	else if (game->player[0] + 1 == game->dofi[0]
 		&& game->player[1] == game->dofi[1])
@@ -63,6 +76,13 @@ void	ft_down(t_game *game)
 		game->player[0]++;
 		write(1, "You were caught by Dofi\n", 24);
 		exit_lose(game);
+	}
+	else if (game->map[game->player[0] + 1][game->player[1]] == 'C')
+	{
+		game->count_c++;
+		game->count_mov++;
+		game->map[game->player[0] + 1][game->player[1]] = '0';
+		game->player[0]++;
 	}
 	else if (game->map[game->player[0] + 1][game->player[1]] == '0')
 	{	
@@ -76,13 +96,16 @@ void	ft_down(t_game *game)
 void	ft_left(t_game *game)
 {
 	if (game->map[game->player[0]][game->player[1] - 1] == '1')
-		return ;
-	else if (game->map[game->player[0]][game->player[1] - 1] == 'C')
 	{
-		game->count_c++;
-		game->count_mov++;
-		game->map[game->player[0]][game->player[1] - 1] = '0';
-		game->player[1]--;
+		if (game->player[0] == game->dofi[0]
+			&& game->dofi[1] - 1 == game->player[1])
+		{
+			game->player[1]--;
+			write(1, "You were caught by Dofi\n", 24);
+			exit_lose(game);
+		}
+		else
+			return ;
 	}
 	else if (game->player[0] == game->dofi[0]
 		&& game->player[1] - 1 == game->dofi[1])
@@ -90,6 +113,13 @@ void	ft_left(t_game *game)
 		game->player[1]--;
 		write(1, "You were caught by Dofi\n", 24);
 		exit_lose(game);
+	}
+	else if (game->map[game->player[0]][game->player[1] - 1] == 'C')
+	{
+		game->count_c++;
+		game->count_mov++;
+		game->map[game->player[0]][game->player[1] - 1] = '0';
+		game->player[1]--;
 	}
 	else if (game->map[game->player[0]][game->player[1] - 1] == '0')
 	{
@@ -103,13 +133,16 @@ void	ft_left(t_game *game)
 void	ft_right(t_game *game)
 {
 	if (game->map[game->player[0]][game->player[1] + 1] == '1')
-		return ;
-	else if (game->map[game->player[0]][game->player[1] + 1] == 'C')
 	{
-		game->count_c++;
-		game->count_mov++;
-		game->map[game->player[0]][game->player[1] + 1] = '0';
-		game->player[1]++;
+		if (game->player[0] == game->dofi[0]
+			&& game->dofi[1] + 1 == game->player[1])
+		{
+			game->player[1]++;
+			write(1, "You were caught by Dofi\n", 24);
+			exit_lose(game);
+		}
+		else
+			return ;
 	}
 	else if (game->player[0] == game->dofi[0]
 		&& game->player[1] + 1 == game->dofi[1])
@@ -117,6 +150,13 @@ void	ft_right(t_game *game)
 		game->player[1]++;
 		write(1, "You were caught by Dofi\n", 24);
 		exit_lose(game);
+	}
+	else if (game->map[game->player[0]][game->player[1] + 1] == 'C')
+	{
+		game->count_c++;
+		game->count_mov++;
+		game->map[game->player[0]][game->player[1] + 1] = '0';
+		game->player[1]++;
 	}
 	else if (game->map[game->player[0]][game->player[1] + 1] == '0')
 	{

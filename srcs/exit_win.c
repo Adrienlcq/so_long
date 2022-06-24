@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 19:12:34 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/06 15:02:02 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/06/10 12:32:29 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	exit_win(t_game *game)
 {
-	write(1, "You win !\n", 10);
+	ft_printf("You win !\n");
 	mlx_destroy_image(game->mlx, game->img);
 	mlx_destroy_window(game->mlx, game->mlx_win);
 	free_tab2d(game->map);

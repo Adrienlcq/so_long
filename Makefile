@@ -64,7 +64,7 @@ LFLAGS       =       -lm -lX11 -lXext -lbsd
 
 FLAGS       =       -Wall -Wextra -Werror -g
 
-.c.o:
+%.o : %.c ./includes/so_long.h
 						@${CC} ${FLAGS} -I${INCLUDES_DIR} -c $< -o ${<:.c=.o}
 						@echo "\t\t${BOLD}${GREEN}${END} ${PURPLE}${<:.s=.o}${END}"
 

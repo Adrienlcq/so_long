@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:22:09 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/06 12:23:04 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/06/24 10:12:20 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	ft_check_file(char *file)
 
 void	ft_init_struct(t_game *game)
 {
+	game->d = 0;
 	game->p = 0;
 	game->c = 0;
 	game->e = 0;

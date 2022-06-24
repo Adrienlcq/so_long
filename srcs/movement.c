@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:56:45 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/03 16:33:05 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/06/10 12:37:59 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	ft_up(t_game *game)
 		game->count_c++;
 		game->map[game->player[0] - 1][game->player[1]] = '0';
 		game->player[0]--;
-		printf("Nombre de coups: %d\n", ++game->count_mov);
+		ft_printf("Nombre de coups: %d\n", ++game->count_mov);
 	}
 	else if (game->map[game->player[0] - 1][game->player[1]] == '0')
 	{	
 		game->player[0]--;
 		game->count_mov++;
-		printf("Nombre de coups: %d\n", game->count_mov);
+		ft_printf("Nombre de coups: %d\n", game->count_mov);
 	}
 	else if (game->map[game->player[0] - 1][game->player[1]] == 'E')
 	{
@@ -41,7 +41,7 @@ void	ft_up(t_game *game)
 		{
 			game->count_mov++;
 			game->player[0]--;
-			printf("Nombre de coups: %d\n", game->count_mov);
+			ft_printf("Nombre de coups: %d\n", game->count_mov);
 			exit_win(game);
 		}
 	}
@@ -56,13 +56,13 @@ void	ft_down(t_game *game)
 		game->count_c++;
 		game->map[game->player[0] + 1][game->player[1]] = '0';
 		game->player[0]++;
-		printf("Nombre de coups: %d\n", ++game->count_mov);
+		ft_printf("Nombre de coups: %d\n", ++game->count_mov);
 	}
 	else if (game->map[game->player[0] + 1][game->player[1]] == '0')
 	{	
 		game->player[0]++;
 		game->count_mov++;
-		printf("Nombre de coups: %d\n", game->count_mov);
+		ft_printf("Nombre de coups: %d\n", game->count_mov);
 	}
 	else if (game->map[game->player[0] + 1][game->player[1]] == 'E')
 	{
@@ -70,7 +70,7 @@ void	ft_down(t_game *game)
 		{
 			game->count_mov++;
 			game->player[0]++;
-			printf("Nombre de coups: %d\n", game->count_mov);
+			ft_printf("Nombre de coups: %d\n", game->count_mov);
 			exit_win(game);
 		}
 	}
@@ -85,13 +85,13 @@ void	ft_left(t_game *game)
 		game->count_c++;
 		game->map[game->player[0]][game->player[1] - 1] = '0';
 		game->player[1]--;
-		printf("Nombre de coups: %d\n", ++game->count_mov);
+		ft_printf("Nombre de coups: %d\n", ++game->count_mov);
 	}
 	else if (game->map[game->player[0]][game->player[1] - 1] == '0')
 	{
 		game->player[1]--;
 		game->count_mov++;
-		printf("Nombre de coups: %d\n", game->count_mov);
+		ft_printf("Nombre de coups: %d\n", game->count_mov);
 	}
 	else if (game->map[game->player[0]][game->player[1] - 1] == 'E')
 	{
@@ -99,7 +99,7 @@ void	ft_left(t_game *game)
 		{
 			game->player[1]--;
 			game->count_mov++;
-			printf("Nombre de coups: %d\n", game->count_mov);
+			ft_printf("Nombre de coups: %d\n", game->count_mov);
 			exit_win(game);
 		}
 	}
@@ -114,13 +114,13 @@ void	ft_right(t_game *game)
 		game->count_c++;
 		game->map[game->player[0]][game->player[1] + 1] = '0';
 		game->player[1]++;
-		printf("Nombre de coups: %d\n", ++game->count_mov);
+		ft_printf("Nombre de coups: %d\n", ++game->count_mov);
 	}
 	else if (game->map[game->player[0]][game->player[1] + 1] == '0')
 	{
 		game->player[1]++;
 		game->count_mov++;
-		printf("Nombre de coups: %d\n", game->count_mov);
+		ft_printf("Nombre de coups: %d\n", game->count_mov);
 	}
 	else if (game->map[game->player[0]][game->player[1] + 1] == 'E')
 	{
@@ -128,7 +128,7 @@ void	ft_right(t_game *game)
 		{
 			game->count_mov++;
 			game->player[1]++;
-			printf("Nombre de coups: %d\n", game->count_mov);
+			ft_printf("Nombre de coups: %d\n", game->count_mov);
 			exit_win(game);
 		}
 	}

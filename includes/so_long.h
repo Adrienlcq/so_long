@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:42:01 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/06 11:06:41 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/06/10 12:33:14 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include "../libft/libft.h"
+# include "../libft/ft_printf.h"
 # include "../minilibx-linux/mlx.h"
 
 # define TEXTURES "txt/P.xpm txt/C1.xpm txt/E.xpm txt/Path.xpm txt/Wall.xpm"
