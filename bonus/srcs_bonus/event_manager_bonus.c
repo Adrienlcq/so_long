@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 15:06:36 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/06 14:53:59 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/07/06 13:10:11 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,20 @@ int	events_key_manager(int keycode, t_game *game)
 
 int	echap_game_mouse(t_game *game)
 {
+	int	i;
+
+	i = -1;
 	write(1, "You quit the game !\n", 20);
-	mlx_destroy_window(game->mlx, game->mlx_win);
+	while (++i < 10)
+		mlx_destroy_image(game->mlx, game->numbers.text_number[i]);
+	i = -1;
+	while (++i < 7)
+		mlx_destroy_image(game->mlx, game->texts_img[i]);
+	mlx_clear_window(game->mlx, game->mlx_win);
 	mlx_destroy_image(game->mlx, game->img);
+	mlx_destroy_window(game->mlx, game->mlx_win);
+	mlx_destroy_display(game->mlx);
 	free_tab2d(game->map);
+	free(game->mlx);
 	exit(0);
 }

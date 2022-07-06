@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 19:12:34 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/24 15:31:51 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/07/06 13:09:47 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	exit_win(t_game *game)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	write(1, "You win !\n", 10);

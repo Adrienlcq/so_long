@@ -33,6 +33,7 @@ SRCS_B      =       	bonus/srcs_bonus/draw_counter_bonus.c\
 						bonus/srcs_bonus/ft_drawing_bonus.c\
 						bonus/srcs_bonus/load_texture_bonus.c\
 						bonus/srcs_bonus/movement_bonus.c\
+						bonus/srcs_bonus/exit_movement.c\
 						bonus/srcs_bonus/movement2_bonus.c\
 						bonus/srcs_bonus/movement_dofi_bonus.c\
 						bonus/srcs_bonus/parsing_bonus.c\

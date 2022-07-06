@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:42:01 by adlecler          #+#    #+#             */
-/*   Updated: 2022/06/24 10:44:53 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/07/06 14:44:01 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,10 @@ void	exit_up(t_game *game);
 void	exit_down(t_game *game);
 void	exit_left(t_game *game);
 void	exit_right(t_game *game);
+
+void	dofi_catch_up(t_game *game);
+void	dofi_catch_down(t_game *game);
+void	dofi_catch_left(t_game *game);
+void	dofi_catch_right(t_game *game);
 
 #endif
